@@ -11,7 +11,7 @@ from firebase_admin import storage
 from datetime import datetime
 
 
-cred = credentials.Certificate("secretAccounbtKey.json")
+cred = credentials.Certificate("newkey.json")
 firebase_admin.initialize_app(cred,{
     'databaseURL':"https://faceattendancerealtime-2a881-default-rtdb.asia-southeast1.firebasedatabase.app/",
     'storageBucket':"faceattendancerealtime-2a881.appspot.com"
@@ -179,9 +179,11 @@ while True:
                     studentInfo = []
                     imgStudent = []
                     imgBackground[44:44 + 633, 808:808 + 414] = imgModeList[modeType]
-    else:
-        modeType = 0
-        counter = 0
-    # cv2.imshow("Webcam", img)
-    cv2.imshow("Face Attendance", imgBackground)
-    cv2.waitKey(1)
+
+        else:
+            modeType = 0
+            counter = 0
+            # cv2.imshow("Webcam", img)
+        cv2.imshow("Face Attendance", imgBackground)
+        cv2.waitKey(1)
+
